@@ -9,8 +9,6 @@ from .analytics import AnalyticsAPI
 from .audio import AudioAPI
 from .chat import ChatAPI
 from .embeddings import EmbeddingsAPI
-from .experiments import ExperimentsAPI
-from .feedback import FeedbackAPI
 from .filters import FiltersAPI
 from .images import ImagesAPI
 from .models import ModelsAPI
@@ -21,7 +19,7 @@ from .prompt_hub import PromptHubAPI
 from .proxy_keys import ProxyKeysAPI
 from .subscription import SubscriptionAPI
 from .video import VideoAPI
-from .webhooks import WebhooksAPI
+
 
 
 class MQL:
@@ -61,10 +59,7 @@ class MQL:
         self.organizations = OrganizationsAPI(self._http)
         self.analytics = AnalyticsAPI(self._http)
         self.models = ModelsAPI(self._http)
-        self.webhooks = WebhooksAPI(self._http)
         self.pricing = PricingAPI(self._http)
-        self.experiments = ExperimentsAPI(self._http)
-        self.feedback = FeedbackAPI(self._http)
         self.prompt_hub = PromptHubAPI(self._http)
         self.subscription = SubscriptionAPI(self._http)
         self.audio = AudioAPI(self._http)
@@ -88,10 +83,7 @@ class MQL:
         new.organizations = OrganizationsAPI(new._http)
         new.analytics = AnalyticsAPI(new._http)
         new.models = ModelsAPI(new._http)
-        new.webhooks = WebhooksAPI(new._http)
         new.pricing = PricingAPI(new._http)
-        new.experiments = ExperimentsAPI(new._http)
-        new.feedback = FeedbackAPI(new._http)
         new.prompt_hub = PromptHubAPI(new._http)
         new.subscription = SubscriptionAPI(new._http)
         new.audio = AudioAPI(new._http)
