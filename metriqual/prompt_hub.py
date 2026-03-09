@@ -1,4 +1,4 @@
-"""Prompt Hub API — create, share, discover, and manage prompts."""
+"""Prompt Hub API — create, share, and manage prompts."""
 
 from __future__ import annotations
 
@@ -52,28 +52,6 @@ class PromptHubAPI:
 
     def get_shared(self, share_token: str) -> Dict[str, Any]:
         return self._client.get(f"/v1/prompt-hub/shared/{share_token}")
-
-    # ── discovery ─────────────────────────────────────────────────────
-
-    def discover(
-        self,
-        *,
-        category: Optional[str] = None,
-        search: Optional[str] = None,
-        sort: Optional[str] = None,
-        **kwargs: Any,
-    ) -> List[Dict[str, Any]]:
-        params: Dict[str, Any] = {**kwargs}
-        if category is not None:
-            params["category"] = category
-        if search is not None:
-            params["search"] = search
-        if sort is not None:
-            params["sort"] = sort
-        return self._client.get("/v1/prompt-hub/discover", params or None)
-
-    def get_public(self, prompt_id: str) -> Dict[str, Any]:
-        return self._client.get(f"/v1/prompt-hub/public/{prompt_id}")
 
     # ── starring ──────────────────────────────────────────────────────
 
