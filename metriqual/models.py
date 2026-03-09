@@ -15,10 +15,10 @@ class ModelsAPI:
         self._client = client
 
     def list(self, provider: str = "openai") -> Dict[str, Any]:
-        return self._client.get(f"/{provider}/v1/models")
+        return self._client.get(f"/{provider}/v1/pricing")
 
     def list_by_provider(self, provider: str) -> Dict[str, Any]:
-        return self._client.get(f"/{provider}/v1/models")
+        return self._client.get(f"/{provider}/v1/pricing")
 
     def get(self, model_id: str, provider: str = "openai") -> Optional[Dict[str, Any]]:
         """Get a specific model by ID (client-side filter)."""
